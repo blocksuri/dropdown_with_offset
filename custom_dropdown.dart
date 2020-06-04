@@ -245,8 +245,6 @@ class _DropdownMenuRouteLayout<T> extends SingleChildLayoutDelegate {
     //   -- https://material.io/design/components/menus.html#usage
     final double maxHeight =
     math.max(0.0, constraints.maxHeight - 2 * _kMenuItemHeight - offsetAmount);
-//    final double maxHeight = 100.0;
-    print('max height: $maxHeight');
     // The width of a menu should be at most the view width. This ensures that
     // the menu does not extend past the left and right edges of the screen.
     final double width = math.min(constraints.maxWidth, buttonRect.width);
@@ -434,7 +432,6 @@ class _DropdownRoutePage<T> extends StatelessWidget {
     final double menuHeight = math.min(maxMenuHeight, preferredMenuHeight);
 
     double menuBottom = menuTop + menuHeight;
-    print('menu top: $menuTop, menu bottom: $menuBottom, menu height:$menuHeight');
 
     // If the computed top or bottom of the menu are outside of the range
     // specified, we need to bring them into range. If the item height is larger
@@ -447,11 +444,7 @@ class _DropdownRoutePage<T> extends StatelessWidget {
       menuBottom = math.max(buttonBottom, bottomLimit);
       menuTop = menuBottom - menuHeight;
     }
-//    menuTop = math.max(175, menuTop);
 
-    print('button top: $buttonTop, buttonBottom:$buttonBottom');
-    print('top limit: $topLimit, bottom limit:$bottomLimit');
-    print('menu top: $menuTop, menu bottom: $menuBottom, menu height:$menuHeight, preferred height: $preferredMenuHeight');
 
     if (route.scrollController == null) {
       // The limit is asymmetrical because we do not care how far positive the
